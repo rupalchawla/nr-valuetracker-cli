@@ -1,0 +1,27 @@
+{
+  "name": "nr-valuetracker-cli",
+  "version": "1.0.0",
+  "description": "Command line interface to fill in value tracker for an account",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupalchawla/nr-valuetracker-cli.git"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "NewRelic",
+    "New Relic"
+  ],
+  "bin": {
+    "valuetracker": "bin/valuetracker"
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0",
+    "minimist": "^1.2.0",
+    "ora": "^2.0.0"
+  }
+}
