@@ -1,9 +1,14 @@
 const minimist = require('minimist');
 const error = require('./utils/error');
+const apm = require('./cmds/apm');
+const infra = require('./cmds/infrastructure');
+const help = require('./cmds/help');
+const package = require('./package.json')
+  
+
 
 module.exports = () => {
   const args = minimist(process.argv.slice(2));
-
   let cmd = args._[0] || 'help';
 
   if (args.version || args.v) {
@@ -11,26 +16,19 @@ module.exports = () => {
   }
 
   if (args.help || args.h) {
-    cmd = 'help';
+     cmd = 'help';
   }
 
   switch (cmd) {
     case 'apm':
-      require('./cmds/apm')(args);
+      apm.exec(args);
       break;
-
-    case 'insights':
-      require('./cmds/insights')(args);
-      break;
-
-    case 'version':
-      require('./cmds/version')(args);
-      break;
-
     case 'help':
-      require('./cmds/help')(args);
+      help.help(args);
       break;
-
+    case 'version':
+      console.log(package.version);
+      break;
     default:
       error(`"${cmd}" is not a valid command!`, true);
       break;
