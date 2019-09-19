@@ -15,7 +15,7 @@ const ServiceMethod = {
 };
 
 const header = {
-    "X-Api-Key": API_KEY,
+    "X-Api-Key": 'Add Key',
     "content-type": "application/json"
 };
 
@@ -33,5 +33,5 @@ function getServiceOptions(apiEndPoint) {
 
 module.exports.ServiceMethod = ServiceMethod;
 module.exports.spinner = spinner;
-module.exports.API_KEY = API_KEY;
+//module.exports.API_KEY = API_KEY;
 module.exports.getServiceOptions = getServiceOptions;

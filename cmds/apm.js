@@ -1,5 +1,5 @@
 const cfg = require("../utils/config");
-const srvc = require("../utils/rest.service");
+const srvc = require("../rest/rest.service");
 
 function getApplications(){
   srvc.listApplications().then(function(res){

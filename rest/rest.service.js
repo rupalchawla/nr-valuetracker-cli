@@ -1,6 +1,6 @@
 const http = require('https');
 const q = require('q');
-const cfg = require('./config');
+const cfg = require('../utils/config');
 const request = require('request');
 
 
