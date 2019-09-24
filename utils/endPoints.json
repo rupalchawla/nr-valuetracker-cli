@@ -1,0 +1,4 @@
+{
+    "APM_LIST_ALL_APPS":"https://api.newrelic.com/v2/applications.json",
+    "APM_LIST_ALL_KEY_TX": "https://api.newrelic.com/v2/applications.json"
+}

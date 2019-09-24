@@ -2,9 +2,10 @@ const minimist = require('minimist');
 const error = require('./utils/error');
 const apm = require('./cmds/apm');
 const infra = require('./cmds/infrastructure');
+const synthetic = require('./cmds/synthetic');
 const help = require('./cmds/help');
-const package = require('./package.json')
-  
+const package = require('./package.json');
+
 
 
 module.exports = () => {
@@ -16,7 +17,7 @@ module.exports = () => {
   }
 
   if (args.help || args.h) {
-     cmd = 'help';
+    cmd = 'help';
   }
 
   switch (cmd) {
@@ -28,6 +29,9 @@ module.exports = () => {
       break;
     case 'version':
       console.log(package.version);
+      break;
+    case 'synthetic':
+      synthetic.exec(args);
       break;
     default:
       error(`"${cmd}" is not a valid command!`, true);

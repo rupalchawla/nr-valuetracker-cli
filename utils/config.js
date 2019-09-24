@@ -1,8 +1,12 @@
 const ora = require('ora');
+const { Parser } = require('json2csv');
 
+const fields = ['Question', 'Answer'];
+const cvsOpts = {fields};
+const cvsParser = new Parser(cvsOpts);
 
 const spinner = ora({
-    spinner: "shark",
+    spinner: "clock",
     color: 'yellow',
     text: 'Loading...'
 });
@@ -15,7 +19,7 @@ const ServiceMethod = {
 };
 
 const header = {
-    "X-Api-Key": 'Add Key',
+    "X-Api-Key": '',
     "content-type": "application/json"
 };
 
@@ -35,3 +39,4 @@ module.exports.ServiceMethod = ServiceMethod;
 module.exports.spinner = spinner;
 //module.exports.API_KEY = API_KEY;
 module.exports.getServiceOptions = getServiceOptions;
+module.exports.cvsParser = cvsParser;

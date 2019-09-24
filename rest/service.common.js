@@ -4,7 +4,7 @@ const cfg = require('../utils/config');
 const request = require('request');
 
 
-function listApplications(){
+function get(endPoint){
     var deferred = q.defer();
     function callback(error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -14,9 +14,9 @@ function listApplications(){
             deferred.reject(error);
         }
       }
-      request(cfg.getServiceOptions("https://api.newrelic.com/v2/applications.json"), callback);
+      request(cfg.getServiceOptions(endPoint), callback);
 
     return deferred.promise;       
 }
 
-module.exports.listApplications = listApplications;
+module.exports.get = get;
